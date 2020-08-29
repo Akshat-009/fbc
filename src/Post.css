@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     flex:1;
+    align-items: center;
 }
 
 .story{
@@ -10,4 +11,125 @@
     padding:10px;
     overflow-x:auto;
     max-width: 700px;
+    margin-bottom:20px;
 }
+.post__send{
+    background:white;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    width:500px;
+    border-radius: 10px;
+    border:1px solid lightgray;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+
+}
+.post__send__info{
+    display: flex;
+    
+
+}
+
+.post__send__info>form{
+    flex:1;
+    display: flex;
+}
+.post__send__info>form >input{
+    flex:1;
+    border:none;
+    outline:none;
+    background-color: #E4E6E9;
+    padding:10px;
+    margin-left:10px;
+    border-radius: 999px;
+}
+.post__send__info >form >button{
+    display: none;
+}
+.post__send__option{
+display:flex;
+justify-content: space-evenly;
+margin-top:5px;
+
+}
+.option__variant{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding:10px;
+    padding:10px;
+    justify-content: center;
+    cursor:pointer;
+    align-items: center;
+    border-radius: 5px;
+}
+.option__variant:hover{
+    background-color: lightgrey;
+}
+.option__variant > h5{
+    color:grey;
+    margin-left: 2px;
+}
+.post__body{
+    margin:20px;
+    background-color: white;
+    width:500px;
+    border-radius: 5px;
+    border-radius: 10px;
+    border:1px solid lightgray;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+
+}
+.post__author{
+
+    display: flex;
+    align-items: center;  
+    margin-left:10px;
+    
+}
+
+.post__timestamp{
+    padding:10px;
+}
+.post__timestamp> h6{
+color:grey;
+}
+.post__caption
+{
+    padding:5px 12px;
+}
+.post__image >img{
+    width: 100%;
+}
+.post__option{
+    padding:5px 20px;
+
+    display: flex;
+    justify-content: space-evenly;
+    border-top:1px solid rgba(128, 128, 128, 0.486);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.468);
+}
+.post__option__variant{
+    display: flex;
+    flex:1;
+    padding:6px;
+   
+    justify-content: center;
+    align-items: center;
+    color:grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.post__option__variant:hover{
+    background-color:rgba(211, 211, 211, 0.507) ;
+  
+}
+.post__option__variant >p{
+    margin-left:10px;
+  
+}
+

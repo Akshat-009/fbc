@@ -34,7 +34,7 @@ function Header() {
              </div>
             </div>
             <div className="header__left">
-             <Avatar/>
+             <Avatar src="https://source.unsplash.com/weekly?man"/>
              <h4>UserName</h4>
              <div className="left__options">
              <ChatBubbleIcon fontSize="small"/>
