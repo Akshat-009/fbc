@@ -6,7 +6,9 @@
 .app__body{
   display: flex;
 
+  
+
 }
 .app__side{
-  flex:0.23;
+  flex:0.5;
 }
