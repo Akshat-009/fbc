@@ -1,0 +1,25 @@
+.sidebarrow{
+    display: flex;
+    padding:8px;
+    align-items: center;
+    color:#1977F3;
+    cursor: pointer;
+    
+    height: fit-content;
+    
+}
+.sidebarrow :hover{
+    background-color:lightgray;
+    border-radius: 2px;
+}   
+
+.options{
+    display: flex;
+    align-items: center;
+    width:100%;
+    padding:2px 5px;
+}
+.options>h3{
+    margin-left:10px;
+    color:black;
+}

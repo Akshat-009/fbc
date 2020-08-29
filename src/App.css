@@ -3,3 +3,10 @@
   width:100vw;
   background-color: #F0F2F5;
 }
+.app__body{
+  display: flex;
+
+}
+.app__side{
+  flex:0.23;
+}
