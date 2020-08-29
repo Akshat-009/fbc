@@ -1,11 +1,12 @@
 import React from 'react'
 import "./App.css"
 import Header from "./Header"
-import { Slide } from '@material-ui/core';
 import SideBar from "./SideBar";
 import Post from "./Post";
 import IndPost from "./IndPost"
+import {useStateValue} from "./StateProvider"
 function App() {
+  const [{user},dispatch]=useStateValue()
   return (
     <div className="app">
       <div className="app__head">
