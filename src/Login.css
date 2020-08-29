@@ -1,0 +1,18 @@
+.login{
+    display: grid;
+    place-items:center;
+
+}
+.login >img{
+    width:150px;
+    margin:100px;
+}
+.login  .MuiButtonBase-root{
+background:#1977F3;
+color:white;
+text-transform: inherit;
+}
+.login  .MuiButtonBase-root:hover{
+color:#1977F3;
+    background-color:white;
+    }

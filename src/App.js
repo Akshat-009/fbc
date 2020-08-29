@@ -5,9 +5,10 @@ import SideBar from "./SideBar";
 import Post from "./Post";
 import IndPost from "./IndPost"
 import {useStateValue} from "./StateProvider"
+import Login from './Login';
 function App() {
   const [{user},dispatch]=useStateValue()
-  return (
+  return user?(
     <div className="app">
       <div className="app__head">
         <Header/>
@@ -31,7 +32,7 @@ function App() {
       </div>
       
     </div>
-  )
+  ):(<Login/>)
 }
 
 export default App
