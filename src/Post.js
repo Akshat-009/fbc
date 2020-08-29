@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
 import './Post.css'
 import StoryReel from "./StoryReel"
 import { Avatar } from '@material-ui/core';
@@ -7,7 +7,25 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
+import db from "./firebase"
+import firebase from "firebase"
+import {useStateValue} from "./StateProvider"
 function Post() {
+    const [caption,setcaption]=useState("")
+    const [url,seturl]=useState("")
+    const [{user},dispatch]=useStateValue()
+    const addPost=(e)=>{
+        e.preventDefault()
+        db.collection("posts").add({
+            author:user.displayName,
+            caption:caption,
+            src:url,
+            avatar:user.photoURL,
+            timestamp:firebase.firestore.FieldValue.serverTimestamp()
+        })
+        setcaption("")
+        seturl("")
+    }
     return (
         <div className="post">
             <div className="story">
@@ -22,9 +40,9 @@ function Post() {
                 <div className="post__send__info">
                     <Avatar src="https://source.unsplash.com/weekly?hulk"/>
                     <form>
-                    <input type="text" placeholder="What's on Your Mind"/>
-                    <input type="text" placeholder="Enter Photo URL"/>
-                    <button onClick={(e)=>e.preventDefault()}type="submit"></button>
+                    <input type="text"value={caption} onChange={(e)=>setcaption(e.target.value)} placeholder="What's on Your Mind"/>
+                    <input type="text"onChange={(e)=>seturl(e.target.value)} value={url} placeholder="Enter Photo URL"/>
+                    <button onClick={addPost}type="submit"></button>
                     </form>
                 </div>
                 <div className="post__send__option">

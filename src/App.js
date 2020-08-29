@@ -6,10 +6,23 @@ import Post from "./Post";
 import IndPost from "./IndPost"
 import {useStateValue} from "./StateProvider"
 import Login from './Login';
+import db from "./firebase"
+import FlipMove from 'react-flip-move';
 
 function App() {
  
   const [{user},dispatch]=useStateValue()
+  const [posts,setposts]=useState([])
+    
+    
+  useEffect(()=>{
+    db.collection("posts").orderBy("timestamp","desc").onSnapshot(snapshot=>(
+      setposts(snapshot.docs.map((doc)=>({
+        id:doc.id,
+        data:doc.data()
+      })))
+    ))
+  },[])
   return user?(
     <div className="app">
       <div className="app__head">
@@ -21,7 +34,20 @@ function App() {
       </div>
       <div className="app__posts">
         <Post/>
-      <IndPost/>
+        <FlipMove>
+        {posts.map((post,index)=>(
+          <IndPost
+          key={index}
+          name={post.data.author}
+          caption={post.data.caption}
+          src={post.data.src}
+          avatar={post.data.avatar}
+          timestamp={post.data.timestamp}
+          />
+
+        ))}
+        </FlipMove>
+      
 
         
      
