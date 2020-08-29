@@ -8,8 +8,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import AssistantPhotoIcon from '@material-ui/icons/AssistantPhoto';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
-import StorefrontIcon from '@material-ui/icons/Storefront';
+import StorefrontIcon from '@material-ui/icons/Storefront'
+import {useStateValue} from "./StateProvider"
 function Header() {
+    const [{user},dispatch]=useStateValue()
     return (
         <div className="header">
             <div className="header__left">
@@ -34,8 +36,8 @@ function Header() {
              </div>
             </div>
             <div className="header__left">
-             <Avatar src="https://source.unsplash.com/weekly?man"/>
-             <h4>UserName</h4>
+             <Avatar src={user.photoURL}/>
+             <h4>{user.displayName}</h4>
              <div className="left__options">
              <ChatBubbleIcon fontSize="small"/>
              </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import "./App.css"
 import Header from "./Header"
 import SideBar from "./SideBar";
@@ -6,7 +6,9 @@ import Post from "./Post";
 import IndPost from "./IndPost"
 import {useStateValue} from "./StateProvider"
 import Login from './Login';
+
 function App() {
+ 
   const [{user},dispatch]=useStateValue()
   return user?(
     <div className="app">
@@ -19,10 +21,11 @@ function App() {
       </div>
       <div className="app__posts">
         <Post/>
-        <IndPost/>
-        <IndPost/>
-        <IndPost/>
-        <IndPost/>
+      <IndPost/>
+
+        
+     
+      
   
       </div>
       <div className="app__ads">
